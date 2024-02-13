@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Portal [STUDENT]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind.config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            color: {
+              'white': '#F5F5F7',
+            },
+            fontFamily: {
+                sans: ['poppins', 'sans-serif'],
+            },
+            fontSize: {
+              'xs': '9px',
+            },
+            extend: {
+                spacing: {
+                    
+                },
+                borderRadius: {
+                    'md': '8px',
+                    'lg': '30px',
+                    'xl': '45px',
+                },
+            },
+        }  
+    }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
+
+</head>
+<body class="bg-blue-100">
+  <!-- <h1 class="text-center text-3xl font-bold">Create your Profile</h1> -->
+  <!-- Personal Information -->   
+  <section class="flex items-center h-screen w-full justify-center">
+    <div class="bg-gray-100 border border-gray-200 drop-shadow-md w-fit rounded-lg px-6 py-5 pt-6 mx-auto max-w-sm">
+      <h1 class="mb-5 text-center text-2xl font-bold">Create your Profile</h1>
+      <h2 class="mb-4 font-bold text-gray-900 dark:text-white">Personal Information</h2>
+        <form class="max-w-md mx-auto"  action="">
+          <div class="grid gap-2 sm:grid-cols-2 sm:gap-3">
+
+              <!-- first name -->
+              <div class="w-full">
+                <label for="fname" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">First name</label>
+                <input type="text" id="fname" name="fname" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              </div>
+              
+              <!-- middle name -->
+              <div class="w-full">
+                <label for="mname" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Middle name<span class="text-red-500">*</span></label>
+                <input type="text" id="mname" name="mname" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              </div>
+              
+              <!-- last name -->
+              <div class="w-full">
+                <label for="lname" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Last name</label>
+                <input type="text" id="lname" name="lname" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              </div>
+              
+              <!-- suffix -->
+              <div class="w-full">
+                <div class="grid gap-4 sm:grid-cols-2 sm:gap-3">
+                  <div class="w-full">
+                    <label for="suffix" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Suffix</label>
+                    <select id="suffix" name="suffix" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <!-- drop down -->  
+                      <option selected>None</option>
+                      <option name="suffix" value="Sr">Sr.</option>
+                      <option name="suffix" value="Jr">Jr.</option>
+                      <option name="suffix" value="I">I</option>
+                      <option name="suffix" value="II">II</option>
+                      <option name="suffix" value="III">III</option>
+                      <option name="suffix" value="IV">IV</option>
+                      <option name="suffix" value="V">V</option>
+                    </select>
+                  </div>
+
+                  <!-- age -->
+                  <div class="w-full">
+                    <label for="age" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Age:</label>
+                    <input type="number" id="age" name="age" min="1" max="999" required placeholder="00" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  </div>
+              </div>
+            
+              <!-- sex -->
+              <div class="w-full">
+                <label for="sex" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Sex</label>
+                <!-- drop down -->
+                <select id="sex" name="sex" required placeholder="900-000-0000" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>Male or Female</option>
+                  <option name="sex" value="female">Female</option>
+                  <option name="sex" value="male">Male</option>
+                </select>
+              </div>
+
+              <!-- gender identity -->
+              <div class="w-full">
+                <label for="GI" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Gender Identity</label>
+                <select id="GI" name="GI" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <!-- drop down --> 
+                  <option selected>None</option>
+                  <option name="gender" value="lesbian">Lesbian</option>
+                  <option name="gender" value="gay">Gay</option>
+                  <option name="gender" value="bisexual">Bisexual</option>
+                  <option name="gender" value="transgender">Transgender</option>
+                  <option name="gender" value="queer">Queer</option>
+                  <option name="gender" value="intersex">Intersex</option>
+                </select>
+              </div>
+              
+              <!-- birthdate   -->
+                <div class="w-full">
+                  <label for="bdate" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Birthdate</label>
+                  <input type="date" id="bdate" name="bdate" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+
+                <!-- phone number -->
+                <div class="w-full">
+                  <label for="phone" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+                  <input type="tel" id="phone" name="number" placeholder="900-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+              
+              <span class="text-xs italic text-red-500">*input N/A if not applicable</span>
+          </div>
+          
+          <!-- next button -->
+          <div class="flex flex-row-reverse pt-5 mt-5">
+            <a href="#">
+              <button type="submit" data-modal-target="student-info" data-modal-toggle="student-info" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Next
+                <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 28 28" fill="none">
+                  <mask id="mask0_276_37" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
+                    <rect width="28" height="28" fill="white"/>
+                  </mask>
+                  <g mask="url(#mask0_276_37)">
+                    <path d="M16.8875 14L8.3125 5.42496C8.02083 5.13329 7.87986 4.78815 7.88958 4.38954C7.89931 3.99093 8.05 3.64579 8.34167 3.35413C8.63333 3.06246 8.97847 2.91663 9.37708 2.91663C9.7757 2.91663 10.1208 3.06246 10.4125 3.35413L19.3667 12.3375C19.6 12.5708 19.775 12.8333 19.8917 13.125C20.0083 13.4166 20.0667 13.7083 20.0667 14C20.0667 14.2916 20.0083 14.5833 19.8917 14.875C19.775 15.1666 19.6 15.4291 19.3667 15.6625L10.3833 24.6458C10.0917 24.9375 9.75139 25.0784 9.3625 25.0687C8.97361 25.059 8.63333 24.9083 8.34167 24.6166C8.05 24.325 7.90417 23.9798 7.90417 23.5812C7.90417 23.1826 8.05 22.8375 8.34167 22.5458L16.8875 14Z" fill="white"/>
+                  </g>
+                </svg>
+              </button>
+            </a>
+          </div>
+        </form>  
+    </div>
+  </section>
+
+  <!-- student information -->
+  <section id="student-info" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="bg-gray-100 border border-gray-200 drop-shadow-md w-fit  rounded-lg px-6 py-5 pt-6 mx-auto max-w-sm">
+      <h1 class="mb-5 text-center text-2xl font-bold">Create your Profile</h1>
+      <h2 class="mb-4 font-bold text-gray-900 dark:text-white">Student Information</h2>
+        <form action="" class="max-w-md mx-auto">
+          <div class="grid gap-2 sm:grid-cols-2 sm:gap-3">
+          
+            <!-- student number -->
+            <div class="sm:col-span-2">
+                <label for="student-number" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Student number</label>
+                <input type="number" id="student-number" name="student-number" placeholder="1234-56789" pattern="[0-9]{4}-[0-9]{5}" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              </div> 
+              
+              <!-- college program -->
+              <div class="sm:col-span-2">
+                <label for="college-program" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">College program</label>
+                <!-- drop down -->
+                <select id="college-program" name="college-program" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>Choose program</option>
+                  <option value="bsit">B.S. in Information Technology</option>
+                  <option value="bscs">B.S. in Computer Science</option>
+                  <option value="bsa">B.S. in Accountancy</option>
+                  <option value="bsais">B.S. in Accounting Information System</option>
+                  <option value="beed">Bachelor of Elementary Education</option>
+                  <option value="bseed">Bachelor of Secondary Education</option>
+                  <option value="bspsych">B.S. in Psychology</option>
+                </select>
+              </div>
+
+              <!-- major in -->
+              <div class="sm:col-span-2">
+                <label for="major" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Major in</label>
+                <!-- drop down -->
+                <select id="major" name="major" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>None</option>
+                  <option value="m-english">English</option>
+                   <option value="m-mathematics">Mathematics</option>
+                   <option value="m-science">Science</option>
+                  </select>
+              </div>
+
+              <!-- year level -->
+                <div class="w-full">
+                  <label for="year-level" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Year level</label>
+                  <select id="year-level" name="year-level" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <!-- drop down --> 
+                    <option selected>Choose year level</option>
+                    <option value="1st-year">1st Year</option>
+                    <option value="2nd-year">2nd Year</option>
+                    <option value="3rd-year">3rd Year</option>
+                    <option value="4th-year">4th Year</option>
+                    <option value="5th-year">5th Year</option>
+                  </select>
+                </div>
+      
+                <!-- section -->
+                <div class="w-full">
+                  <label for="section" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Section</label>
+                  <input type="text" id="section" name="section" placeholder="1 IT-6" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+          </div>
+          
+          <!-- back button -->
+          <div class="flex pt-5 mt-5">
+              <button data-modal-hide="student-info" type="button" class="flex justify-center text-base py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                <svg class=" w-3.5 h-3.5 me-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 28 28" fill="none">
+                  <mask id="mask0_2_202" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
+                  <rect width="28" height="28" fill="#1C1B1F"/>
+                  </mask>
+                  <g mask="url(#mask0_2_202)">
+                  <path d="M18.6667 28L7 16.3333L18.6667 4.66663L20.7375 6.73746L11.1417 16.3333L20.7375 25.9291L18.6667 28Z" fill="#1C1B1F"/>
+                  </g>
+                  </svg>
+                  Back
+              </button>
+            
+            <!-- submit button -->
+              <div class="flex-auto flex flex-row-reverse">
+                  <button type="submit" class="text-base text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Submit
+                    <svg class="w-3.5 h-3.5 me-2" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
+                      <mask id="mask0_276_37" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
+                        <rect width="28" height="28" fill="white"/>
+                      </mask>
+                      <g mask="url(#mask0_276_37)">
+                        <path d="M16.8875 14L8.3125 5.42496C8.02083 5.13329 7.87986 4.78815 7.88958 4.38954C7.89931 3.99093 8.05 3.64579 8.34167 3.35413C8.63333 3.06246 8.97847 2.91663 9.37708 2.91663C9.7757 2.91663 10.1208 3.06246 10.4125 3.35413L19.3667 12.3375C19.6 12.5708 19.775 12.8333 19.8917 13.125C20.0083 13.4166 20.0667 13.7083 20.0667 14C20.0667 14.2916 20.0083 14.5833 19.8917 14.875C19.775 15.1666 19.6 15.4291 19.3667 15.6625L10.3833 24.6458C10.0917 24.9375 9.75139 25.0784 9.3625 25.0687C8.97361 25.059 8.63333 24.9083 8.34167 24.6166C8.05 24.325 7.90417 23.9798 7.90417 23.5812C7.90417 23.1826 8.05 22.8375 8.34167 22.5458L16.8875 14Z" fill="white"/>
+                      </g>
+                    </svg>
+                  </button>
+              </div>
+            
+          </div> 
+        </form>  
+    </div>
+  </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+</html>

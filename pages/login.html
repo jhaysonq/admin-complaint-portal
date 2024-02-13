@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Portal [ADMIN]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- start of tailwind.config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            
+            
+            fontFamily: {
+                sans: ['poppins', 'sans-serif'],
+            },
+            extend: {
+                spacing: {
+                    
+                },
+                borderRadius: {
+                    'md': '8px',
+                    'lg': '30px',
+                },
+            },
+        }  
+    }
+    </script>
+    <!-- end of tailwind.config -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
+</head>
+<body class="bg-blue-100 dark:bg-black">
+    <!-- nav bar LOGO ONLY -->
+    <header>
+        <nav class="bg-white border-gray-200 dark:bg-gray-900 drop-shadow-sm mb-20">
+            <div class="max-w-screen-xl flex flex-wrap flex-col items-center align-center justify-between mx-auto p-4">
+            <a href="./login.html" class="flex items-center space-x-3 rtl:space-x-reverse ">
+                <img src="../assets/img/admin-logo.png" class="h-16" alt="logo" />
+            </a>
+        </nav>
+    </header>
+    
+    <!-- Sign in form -->
+    <section id="signin-form" class="">
+        <div class="bg-gray-100 border border-gray-200 drop-shadow-md rounded-lg dark:bg-gray-900 px-6 py-5 pt-6 mx-auto max-w-sm">
+            <h2 class="text-center mb-4 text-2xl font-bold text-gray-900 dark:text-white">Welcome Admin! 👋</h2>
+            <form class="max-w-md mx-auto" action="/admin/index.html">
+    
+                <!-- email -->
+                <div class="mb-5">
+                    <label for="email" class="indent-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                    <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@ccc.edu.ph" required>
+                </div>
+    
+                <!-- password -->
+                <div class="mb-5">
+                    <label for="password" class="indent-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                    <input type="password" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+                  </div>
+                  
+                <!-- remember me check box   -->
+                  <div class="flex items-start mb-5">
+                    <div class="flex items-center h-5">
+                      <input id="terms" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                    </div>
+                    <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                  </div>
+
+                  <!-- LOGIN button -->
+                  <div class="flex flex-col items-center mb-5">
+                    <button type="submit" class="content-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">LOGIN</button>
+                  </div>
+                  
+
+                  <div class="text-center">
+                    <div class="mb-1 text-xs hover:text-blue-700 dark:text-gray-400 dark:hover:text-white cursor-pointer">
+                        <span data-modal-target="recovery-form" data-modal-toggle="recovery-form" class="">Forgot Password?</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- recovery form -->
+    <section id="recovery-form" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="bg-gray-100 border border-gray-200 drop-shadow-md rounded-lg dark:bg-gray-900 px-6 py-5 pt-6 mx-auto max-w-sm">
+            <h2 class="text-center mb-4 text-xl font-bold text-gray-900 dark:text-white">Forgot Password?</h2>
+            <form class="max-w-md mx-auto">
+                <!-- input email -->
+                <div class="mb-5">
+                    <label for="email" class="indent-1 block mb-2 text-sm font-medium text-gray-900 dark:text-white">Recovery email</label>
+                    <input data-tooltip-target="recovery-tip" type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@ccc.edu.ph" required>
+                    <!-- tooltip -->
+                    <div id="recovery-tip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-xs font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-md shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                        Please enter your recovery email <br> to reset your password.
+                    <div class="tooltip-arrow" data-popper-arrow></div>
+                    </div> 
+                </div>
+
+                <!-- login, reset button -->
+                <div class="flex pt-5 mt-5">
+                    <!-- back to LOGIN button -->
+                    <div class="pr-10">
+                        <button data-modal-hide="recovery-form" type="button" class="flex justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                            Back to LOGIN
+                        </button>
+                    </div>
+                    
+        
+                    <!-- reset button -->
+                    <div class="flex-auto flex flex-row-reverse pl-10">
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">RESET</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- request account form -->
+    <section id="request-account-form" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="bg-gray-100 border border-gray-200 drop-shadow-md w-fit rounded-lg px-6 py-5 pt-6 mx-auto max-w-sm">
+            <h2 class="mb-2 text-center text-xl font-bold text-gray-900 dark:text-white">Request an account</h2>
+            <h3 class="italic text-xs text-justify leading-snug text-red-600">Note: Only enrolled student of City College of Calamba are eligible to request an account</h3>
+            <form class="mt-2 mx-auto"  action="">
+                <div class="grid gap-2 sm:grid-cols-2 sm:gap-3">
+                    <!-- input email -->
+                    <div class="sm:col-span-2">
+                        <label for="email" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">CCC email</label>
+                        <input data-tooltip-target="request-tooltip" type="email" id="email" name="emailr" placeholder="name@ccc.edu.ph" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <!-- tooltip -->
+                        <div id="request-tooltip" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-xs font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-md shadow-sm opacity-0 tooltip dark:bg-gray-700">
+                            Use only the CCC email given by the school to you.
+                        <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div> 
+                      </div> 
+                    <!-- student number -->
+                    <div class="sm:col-span-2">
+                        <label for="student-number" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Student number</label>
+                        <input type="number" id="student-number" name="student-number" placeholder="1234-56789" pattern="[0-9]{4}-[0-9]{5}" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div> 
+                    <!-- input first name -->
+                    <div class="w-full">
+                        <label for="fname" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">First name</label>
+                        <input type="text" id="fname" name="fname" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+                    <!-- last name -->
+                    <div class="w-full">
+                        <label for="lname" class="mb-2 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Last name</label>
+                        <input type="text" id="lname" name="lname" required class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+                </div>
+                
+                <div class="flex pt-5 mt-5">
+                    <!-- back to LOGIN button -->
+                    <button data-modal-hide="request-account-form" type="button" class="flex justify-center py-2.5 px-5 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                    Back to LOGIN
+                    </button>
+                    <!-- reset button -->
+                    <div class="flex-auto flex flex-row-reverse">
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">SUBMIT</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+
+<!-- <div class="flex flex-col min-h-screen">
+    <footer class="sticky-bottom-0.5 bg-white rounded-md shadow m-4 dark:bg-gray-800" >
+        <div class="w-full mx-auto max-w-screen-xl p-4 flex flex-col">
+          <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+        </span>
+        </div>
+    </footer>
+</div> -->
+    
+
+
+
+</html>
