@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
+    <script src="/assets/js/change-profile.js" defer></script>
   </head>
 
   <body>
@@ -363,18 +364,25 @@
                   </div>
 
                   <div class="">
-                    <div class="flex justify-center items-center">
-                      <div class="m-6 flex items-center justify-center">
-                        <img class="object-cover h-40 w-40 rounded-md" src="/assets/img/dummy-profile.jpg" alt="avatar">
-                      </div>
-                      <div class="">
-                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                          Upload profile photo
-                        </label>
-                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-md cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
-                        <span class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">Format: JPG or PNG</span>
-                      </div>
+                    <form action="" method="post">
+                      <div class="flex justify-center items-center">
+                        <div class="m-6 flex items-center justify-center">
+                          <img id='preview_img' class="object-cover h-40 w-40 rounded-md" src="/assets/img/dummy-profile.jpg" alt="avatar">
+                        </div>
+                        <div class="">
+                          <label for="upload" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Upload profile photo
+                          </label>
+                          <input onchange="loadFile(event)" type="file" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-md cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                          <span class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">Format: JPG or PNG; Size: 1000x1000</span>
+                        </div>
+                        <div class="my-3 flex-row-reverse">
+                          <button type="submit" class="ml-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            Change Profile
+                          </button>
+                        </div>
                     </div>
+                    </form>
 
                     <div class="flex justify-center">
                       <form class="p-6 xl:max-w-2xl md:max-w-md  mx-auto" >
