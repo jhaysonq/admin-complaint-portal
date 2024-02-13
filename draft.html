@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complaint Portal [ADMIN]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind.config -->
+    <script>
+        tailwind.config = {
+          theme: {
+            
+            fontFamily: {
+                sans: ['poppins', 'sans-serif'],
+            },
+            extend: {
+                spacing: {
+                    
+                },
+                borderRadius: {
+                    'md': '8px',
+                    'lg': '30px',
+                },
+            },
+        }  
+    }
+    </script>
+    <link rel="stylesheet" href="/assets/css/tailwind.output.css" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="/assets/js/init-alpine.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+    <script src="/assets/js/charts-lines.js" defer></script>
+    <script src="/assets/js/charts-pie.js" defer></script>
+  </head>
+  
+  <body class="">
+    <div class="relative bg-gray-100 border border-gray-200 drop-shadow-md w-fit rounded-lg px-6 py-5 pt-6 ">
+      <!-- close modal -->
+      <div class="flex justify-between items-center">
+        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="response-1">
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        <span class="sr-only">Close modal</span>
+      </button>
+      </div>
+
+      <h1 class="pb-8 text-center text-2xl font-bold text-gray-800 dark:text-white">RESPONSE FORM</h1>
+      
+      <!-- student-info -->
+      <div class="mb-6 flex justify-center"> 
+        <form method="get" action="#">
+          <div class="w-full flex">
+            <!-- profile img -->
+              <img class="object-cover h-40 w-40 rounded-md" src="/assets/img/dummy-profile.jpg" alt="">
+              <div class="ml-3 grid gap-3 grid-cols-2">
+                <!-- name -->
+                <div class="xl:col-span-2">
+                  <label for="name" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Name</label>
+                  <input type="text" id="name" name="name" value="lname, fname mname" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                <!-- student ID -->
+                <div class="w-full">
+                  <label for="student-id" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Student ID</label>
+                  <input type="number" id="student-id" name="student-id" value="XXXX-XXXXX" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                <!-- ccc-email -->
+                <div class="w-full">
+                  <label for="email" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">CCC E-mail</label>
+                  <input type="email" id="email" name="email" value="user@ccc.edu.ph" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+              </div>
+          </div>
+        </form>
+      </div>
+      
+        
+        <div class=" grid grid-cols-3 ">
+            <!-- page 1 -->
+          <div class="pr-3 border-r">
+            <form method="get" action="">
+              <div class="grid gap-2 grid-cols-2">
+                <!-- category -->
+                <div class="grid col-span-2 mb-2">
+                  <label for="category" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Category</label>
+                  <input type="text" id="category" name="category" value="" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                <!-- title -->
+                <div class="col-span-2">
+                    <label for="title" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                    <input type="text" id="title" name="title" value="" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div>
+                <!-- input name instructor/staff -->
+                <div class="col-span-2">
+                    <label for="prof-involve" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Name of Instructor, Student, or Staff involve<span class="text-red-600 italic">*</span></label>
+                    <input type="text" id="prof-involve" name="prof-involve" value="" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                </div> 
+                <!-- input date -->
+                <div class="w-full">
+                    <label for="date" class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">Date of incident</label>
+                    <input type="date" id="date" name="date" value="" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  <!-- input time -->
+                  <div class="w-full">  
+                    <label class="mb-1 indent-1 block text-sm font-medium text-gray-900 dark:text-white">
+                      Time of Incident<span class="text-red-600 italic">*</span>
+                    </label>
+                    <input type="text" name="date" value="" readonly placeholder="ex. 00:00 am/pm" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  </div>
+                  <!-- input grievance -->
+                  <div class="col-span-2">
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Specify your Grievance</label>
+                    <textarea rows="5" readonly class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                  </div>
+              </div>
+            </form> 
+          </div>
+
+          <!-- page 2 -->
+          <div class="pl-3 pr-3 border-r">
+            <form action="">
+              <div class="grid gap-2 grid-cols-2">
+                <div class="col-span-2">
+                    <label class="text-sm font-bold text-gray-500 ">Attach Document</label>
+                    <div class="flex items-center justify-center w-full">
+                      <label class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
+                        <div class="h-full w-full text-center flex flex-col justify-center items-center  ">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-blue-400 group-hover:text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                          </svg>
+                          <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here <br /> or <a href="" id="" class="text-blue-600 hover:underline">select a file</a> from your computer</p>
+                        </div>
+                        <input type="file" class="hidden">
+                      </label>
+                    </div>
+                    <span class="my-2 text-sm text-gray-300">File type: pdf, png, or jpg</span>
+                  </div>
+                  <div class="col-span-2">
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Request Outcome<span class="text-red-600 italic">*</span></label>
+                    <textarea rows="5" readonly class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="specify the solution/action you want to taken"></textarea>
+                  </div>
+              </div>
+            </form>
+            </div> 
+
+            <!-- page 3 -->
+            <div class="pl-3 sm:pt-3">
+              <form method="get" action="">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message<span class="text-red-600 italic">*</span></label>
+                <textarea rows="19"  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-md border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+
+                <div class="mt-6 flex-auto flex flex-row-reverse">
+                  <a href="/pages/profile.html">
+                    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      Submit
+                    </button>
+                  </a>
+                </div>
+              </form>
+            </div>
+        </div>
+
+        <span class="md:col-span-2 text-xs italic text-red-600 dark:text-red-500 font-medium">
+          *input N/A if not applicable
+        </span>
+
+
+        <!-- submit button -->
+        
+      </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  </body>
+</html>
